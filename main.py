@@ -65,3 +65,5 @@ for x in threads:
 for x in range(len(download_urls)):
 	file_name = str(download_urls[x]).split("/")[-1]
         download_file(download_urls[x], file_name)
+        # sleep for 10s to prevent server overload
+        sleep(10)
