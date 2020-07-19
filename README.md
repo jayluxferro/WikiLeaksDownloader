@@ -4,6 +4,7 @@ This project uses python and wget downloader to download all Vault7 documents on
 **Python2**
 ## Instructions
 1. Download wget
+
 macOS:
 ```
 brew install wget
