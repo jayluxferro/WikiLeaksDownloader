@@ -1,7 +1,7 @@
-# WiliLeaks Vault7 Files Download
+## WikiLeaks Vault7 Files Downloader
 This project uses python and wget downloader to download all Vault7 documents on wikileaks.org. The project has only been tested on macOS and Linux.
 
-**Python2**
+**Python3**
 ## Instructions
 1. Download wget
 

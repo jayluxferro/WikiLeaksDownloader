@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
 from requests import get
@@ -57,7 +57,7 @@ for x in threads:
     sleep(.1)
     x.start()
 
-    # Wait for all of them to finish
+    # Wait for all of threads to finish
 for x in threads:
     x.join()
 
