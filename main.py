@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from bs4 import BeautifulSoup
-import urllib2
+from requests import get
 import subprocess
 import threading
 import sys
@@ -16,8 +16,8 @@ def download_file(target_url, filname):
 
 def searchForDownloadLinks(link):
     folder_name = link[12:]
-    download_page = urllib2.urlopen(base_url + link)
-    page_content = "".join(download_page.readlines())
+    download_page = get(base_url + link).text
+    page_content = "".join(download_page.splitlines())
     download_links = BeautifulSoup(page_content, "lxml")
     for dl in download_links.find_all('a'):
         download_link = dl.get('href')
@@ -27,8 +27,8 @@ def searchForDownloadLinks(link):
             print("[+] Download link found: " + str(dl))
 
 # getting web page
-web_data = urllib2.urlopen(base_url)
-web_data = "".join(web_data.readlines())
+web_data = get(base_url).text
+web_data = "".join(web_data.splitlines())
 
 # retrieving links
 download_urls = []
